@@ -1,0 +1,23 @@
+name: JustMessages
+version: '0.0.1'
+main: org.azex.justMessages.JustMessages
+api-version: '1.20'
+prefix: [ Just Messages ]
+authors: [ Azex ]
+description: Adds a new messaging system to your server.
+website: https://discord.gg/nKEa5NxRew
+commands:
+  togglepm:
+    aliases: tpm
+    description: Allows players to toggle their messages.
+    permission: justmessages.tpm
+  justmessages:
+    description: This command allows you to reload the config or get info about the plugin.
+  msg:
+    aliases: [message, tell, w, whisper]
+    description: Allows players to send messages to others.
+    permission: justmessages.msg
+  reply:
+    aliases: r
+    description: Allows players to reply to eachother.
+    permission: justmessages.reply

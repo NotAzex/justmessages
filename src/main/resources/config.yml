@@ -1,0 +1,54 @@
+# Only MiniMessage colors are allowed, or else errors will occur.
+# This config can be reloaded by doing '/justmessages reload' in game.
+
+Replies:
+  Recipient: '<aqua>You<white> have received a reply from <aqua>%sender%<white>: %message%'
+  Sender: '<aqua>You<white> replied to <aqua>%recipient%<white>: %message%'
+Messages:
+  Recipient: '<aqua>You<white> have received a message from <aqua>%sender%<white>: %message%'
+  Sender: '<aqua>You<white> sent a message to <aqua>%recipient%<white>: %message%'
+Other:
+  CantSendMessageToYourself: '<red>You can''t send a message to yourself!'
+  PlayerNotOnline: '<red>That player is not online!'
+  UsedMsgWrong: '<red>Invalid command usage! [/msg <player> <text>]'
+  UsedReplyWrong: '<red>Invalid command usage! [/reply <text>]'
+  NoOneToReplyTo: '<red>You have no one to reply to!'
+  DisabledMessages: '<red>You have disabled messages.'
+  EnabledMessages: '<green>You have enabled messages.'
+Sounds:
+  Error:
+    Sound: BLOCK_NOTE_BLOCK_BASS
+    Pitch: 1
+    Volume: 100
+  Replied:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  Messaged:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  ReceivedReply:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  ReceivedMessage:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  EnabledMessages:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  DisabledMessages:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  Info:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  Reloaded:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
