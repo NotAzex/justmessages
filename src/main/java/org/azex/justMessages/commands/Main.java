@@ -52,9 +52,7 @@ public class Main implements CommandExecutor {
                 plugin.reloadConfig();
                 messaging.loadFormat();
                 sender.sendMessage(reloaded);
-
                 utilities.playSound("Sounds.Reloaded", player);
-
                 return true;
             }
         }

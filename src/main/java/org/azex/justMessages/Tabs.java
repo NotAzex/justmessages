@@ -26,6 +26,13 @@ public class Tabs implements TabCompleter {
 
         switch (command.getName()) {
 
+            case "ignore" -> {
+                if (args.length == 1) {
+                    return players(args[0]);
+                }
+                return Collections.emptyList();
+            }
+
             case "togglepm" -> {
                 return Collections.emptyList();
             }

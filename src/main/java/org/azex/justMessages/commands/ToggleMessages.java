@@ -25,7 +25,7 @@ public class ToggleMessages implements CommandExecutor {
         if (utilities.toggleStatus.containsKey(player)) {
             utilities.toggleStatus.remove(player);
             player.sendMessage(utilities.stringFromConfig("Other.EnabledMessages"));
-            utilities.playSound("Sounds.DisabledMessages", player);
+            utilities.playSound("Sounds.EnabledMessages", player);
         } else {
             utilities.toggleStatus.put(player, true);
             player.sendMessage(utilities.stringFromConfig("Other.DisabledMessages"));

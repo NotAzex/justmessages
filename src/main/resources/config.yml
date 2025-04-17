@@ -8,13 +8,19 @@ Messages:
   Recipient: '<aqua>You<white> have received a message from <aqua>%sender%<white>: %message%'
   Sender: '<aqua>You<white> sent a message to <aqua>%recipient%<white>: %message%'
 Other:
+  CantIgnoreYourself: '<red>You can''t ignore yourself!'
   CantSendMessageToYourself: '<red>You can''t send a message to yourself!'
   PlayerNotOnline: '<red>That player is not online!'
   UsedMsgWrong: '<red>Invalid command usage! [/msg <player> <text>]'
   UsedReplyWrong: '<red>Invalid command usage! [/reply <text>]'
+  UsedIgnoreWrong: '<red>Invalid command usage! [/ignore <player>]'
   NoOneToReplyTo: '<red>You have no one to reply to!'
   DisabledMessages: '<red>You have disabled messages.'
   EnabledMessages: '<green>You have enabled messages.'
+  IgnoredPlayer: '<green>You have ignored %target%.'
+  UnignoredPlayer: '<green>You have unignored %target%.'
+  IgnoreError: '<red>That player has ignored you, you can''t message them!'
+  RecipientHasDisabledMessages: '<red>That player has disabled their messages.'
 Sounds:
   Error:
     Sound: BLOCK_NOTE_BLOCK_BASS
@@ -41,6 +47,14 @@ Sounds:
     Pitch: 1
     Volume: 100
   DisabledMessages:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  Ignored:
+    Sound: BLOCK_NOTE_BLOCK_PLING
+    Pitch: 1
+    Volume: 100
+  Unignored:
     Sound: BLOCK_NOTE_BLOCK_PLING
     Pitch: 1
     Volume: 100

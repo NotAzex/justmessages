@@ -14,6 +14,8 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Messaging implements CommandExecutor {
 
@@ -49,7 +51,7 @@ public class Messaging implements CommandExecutor {
     }
 
     private Component replace(String sender, String recipient, String msg, Component two) {
-        Component one = two
+        return two
                 .replaceText(builder -> builder
                         .match("%sender%")
                         .replacement(sender)
@@ -61,7 +63,6 @@ public class Messaging implements CommandExecutor {
                 .replaceText(builder -> builder
                         .match("%message%")
                         .replacement(msg));
-        return one;
     }
 
     private void sendMessage(String type, Player sender, Player recipient, String msg) {
@@ -131,6 +132,21 @@ public class Messaging implements CommandExecutor {
                     return false;
                 }
 
+                if (utilities.toggleStatus.get(recipient) != null) {
+                    sender.sendMessage(utilities.stringFromConfig("Other.RecipientHasDisabledMessages"));
+                    utilities.playSound("Sounds.Error", sender);
+                    return false;
+                }
+
+                if (utilities.ignores.get(recipient) != null) {
+                    Set<Player> ignored = utilities.ignores.get(recipient);
+                    if (ignored.contains(sender)) {
+                        sender.sendMessage(utilities.stringFromConfig("Other.IgnoreError"));
+                        utilities.playSound("Sounds.Error", sender);
+                        return false;
+                    }
+                }
+
                 String msg = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
                 sendMessage("msg", sender, recipient, msg);
                 return true;
@@ -146,6 +162,12 @@ public class Messaging implements CommandExecutor {
 
                 if (utilities.replies.get(sender) == null) {
                     sender.sendMessage(utilities.stringFromConfig("Other.NoOneToReplyTo"));
+                    utilities.playSound("Sounds.Error", sender);
+                    return false;
+                }
+
+                if (utilities.toggleStatus.get(utilities.replies.get(sender)) != null) {
+                    sender.sendMessage(utilities.stringFromConfig("Other.RecipientHasDisabledMessages"));
                     utilities.playSound("Sounds.Error", sender);
                     return false;
                 }

@@ -2,11 +2,14 @@ name: JustMessages
 version: '0.0.1'
 main: org.azex.justMessages.JustMessages
 api-version: '1.20'
-prefix: [ Just Messages ]
+prefix: Just Messages
 authors: [ Azex ]
 description: Adds a new messaging system to your server.
 website: https://discord.gg/nKEa5NxRew
 commands:
+  ignore:
+    description: Allows players to block someone from messaging them.
+    permission: justmessages.ignore
   togglepm:
     aliases: tpm
     description: Allows players to toggle their messages.
